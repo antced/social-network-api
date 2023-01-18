@@ -1,5 +1,6 @@
 const { Schema, Types } = require('mongoose');
 
+// reaction schema for thoughts
 const reactionSchema = new Schema(
   {
     reactionId: {
