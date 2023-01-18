@@ -13,6 +13,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: formatDate
     },
     username: {
       type: String,
@@ -37,7 +38,9 @@ thoughtSchema
   });
 
   // getter method to formate date
-// TODO getter method format date
+function formatDate() {
+  return createdAt.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+}
 
 // Initialize Thought model
 const Thought = model('thought', thoughtSchema);
