@@ -24,6 +24,7 @@ const thoughtSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
+      getters: true
     },
     id: false,
   }
@@ -37,9 +38,9 @@ thoughtSchema
     return this.reactions.length;
   });
 
-  // getter method to formate date
-function formatDate() {
-  return createdAt.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
+// getter method to formate date
+function formatDate(createdAt) {
+  return createdAt.toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })
 }
 
 // Initialize Thought model

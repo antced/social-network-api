@@ -4,7 +4,7 @@ module.exports = {
   async getThoughts(req, res) {
     try {
       // find all thoughts
-      const thoughts = Thought.find()
+      const thoughts = await Thought.find()
       res.status(200).json(thoughts)
     } catch (error) {
       res.status(500).json(error)
@@ -13,7 +13,7 @@ module.exports = {
   // find a single thought by id
   async getSingleThought(req, res) {
     try {
-      const oneThought = Thought.findOne({ _id: req.params.thoughtId })
+      const oneThought = await Thought.findOne({ _id: req.params.thoughtId })
       res.status(200).json(oneThought)
     } catch (error) {
       res.status(500).json(error)

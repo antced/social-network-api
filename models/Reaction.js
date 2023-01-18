@@ -31,7 +31,7 @@ const reactionSchema = new Schema(
 );
 
 // getter method to format timestamp on query
-function formatDate() {
+function formatDate(createdAt) {
   return createdAt.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})
 }
 
